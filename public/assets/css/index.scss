@@ -1,0 +1,33 @@
+
+$primary: #008080;
+$dark: #333333;
+$default: #e2e2e2;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@mixin btn-theme($theme:$default) {
+    box-shadow: 0 1px 10px $dark !important;
+    background: $theme !important;
+    color: #fff;
+    border: none;
+}
+
+.btn-teal{
+    @include btn-theme($theme:$primary);
+}
+.btn-dark{
+    @include btn-theme($theme: $dark);
+}
+.btn-default{
+    @include btn-theme()
+}
+
+.center{
+	position: absolute;
+	display: flex;
+	height: 100%;
+}
