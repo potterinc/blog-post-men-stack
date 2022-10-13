@@ -26,9 +26,16 @@
 }
 
 .center {
-  position: absolute;
   display: flex;
   height: 100%;
+}
+
+.bg-image {
+  position: absolute;
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

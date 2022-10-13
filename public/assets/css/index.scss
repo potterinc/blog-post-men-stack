@@ -1,33 +1,41 @@
-
 $primary: #008080;
 $dark: #333333;
 $default: #e2e2e2;
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-@mixin btn-theme($theme:$default) {
+@mixin btn-theme($theme: $default) {
     box-shadow: 0 1px 10px $dark !important;
     background: $theme !important;
     color: #fff;
     border: none;
 }
 
-.btn-teal{
-    @include btn-theme($theme:$primary);
+.btn-teal {
+    @include btn-theme($theme: $primary);
 }
-.btn-dark{
+
+.btn-dark {
     @include btn-theme($theme: $dark);
 }
-.btn-default{
+
+.btn-default {
     @include btn-theme()
 }
 
-.center{
-	position: absolute;
-	display: flex;
-	height: 100%;
+.center {
+    // position: absolute;
+    display: flex;
+    height: 100%;
+}
+
+.bg-image {
+    position: absolute;
+    background: url(../images/bg.jpg) no-repeat;
+    background-size:cover;
+    height: 100%;
+    width: 100%;
 }

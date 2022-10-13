@@ -1,10 +1,11 @@
 {
-  "name": "blog-post",
+  "name": "eWriter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "nodemon index.js",
+    "start":"node index",
+    "dev": "nodemon index.js",
     "sass": "sass --wait public/css/index.scss:public/css/styles.css"
   },
   "keywords": [],
