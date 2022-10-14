@@ -7,35 +7,46 @@ $default: #e2e2e2;
     padding: 0;
     box-sizing: border-box;
 }
-@mixin btn-theme($theme: $default) {
+
+@mixin bg-theme($theme: $default) {
     box-shadow: 0 1px 10px $dark !important;
     background: $theme !important;
-    color: #fff;
-    border: none;
 }
 
-.btn-teal {
-    @include btn-theme($theme: $primary);
+.bg-teal {
+    @include bg-theme($theme: $primary);
+    color:#fff;
 }
 
-.btn-dark {
-    @include btn-theme($theme: $dark);
+.bg-dark {
+    @include bg-theme($theme: $dark);
+    color: #fff
 }
 
-.btn-default {
-    @include btn-theme()
+.bg-default {
+    @include bg-theme();
+}
+
+.bg-none {
+    @include bg-theme($theme: none);
 }
 
 .center {
     // position: absolute;
     display: flex;
-    height: 100%;
+    height: 90%;
 }
 
 .bg-image {
     position: absolute;
     background: url(../images/bg.jpg) no-repeat;
-    background-size:cover;
+    background-size: cover;
     height: 100%;
     width: 100%;
+}
+.opacity{
+    filter: opacity(.5);
+}
+.opacity-min{
+    filter:opacity(.7);
 }
