@@ -29,10 +29,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Products</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link active">Inspiring Quotes</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link new-article">New Article</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="view-all">View All</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="blog">Blog</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link btn btn-sm btn-outline-info text-primary" id="hire">Hire a Writer</a></li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -41,7 +42,7 @@
                 </div>
             </div>
         </nav>
-        <div class="text-center center">
+        <div class="text-center center" id="router-outlet">
             <div style="margin:auto" class="py-2 px-5 bg-dark opacity-min container">
                 <div class="writer-content">
                     <blockquote>
@@ -70,13 +71,14 @@
                     </blockquote>
                     
                 </div>
-                <a href="/new" class="btn btn-lg btn-primary">Get Started</a>
+                <a href="#" class="btn btn-lg btn-primary mb-1 new-article">Get Started</a>
             </div>
         </div>
     </div>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/slick/slick.min.js"></script>
+    <script src="assets/js/app.js"></script>
     <script>
         $('.writer-content').slick({
             autoplay: true,
@@ -85,7 +87,7 @@
             fade: true,
             cssEase: 'linear',
             speed: 500,
-            adaptiveHeight:true,
+            // adaptiveHeight:true,
             pauseOnFocus: true,
             autoplaySpeed: 5000
         })

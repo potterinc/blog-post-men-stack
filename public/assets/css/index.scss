@@ -50,3 +50,12 @@ $default: #e2e2e2;
 .opacity-min{
     filter:opacity(.7);
 }
+.view{
+    // width: 40%;
+    margin: auto;
+    text-align: left;
+
+    textarea{
+        resize: vertical;
+    }
+}
