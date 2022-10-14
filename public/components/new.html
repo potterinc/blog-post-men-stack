@@ -5,6 +5,15 @@
     </header>
     <div class="card-body mb-2">
         <form method="post" action="/api/new" role="form">
+            <div class="row g-3 mb-2">
+                <label for="author" class="label">Author</label>
+                <div class="col-md-6">
+                    <input type="text" name="firstname" id="firstname" placeholder="First Name" class="form-control input-sm">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="lastname" id="lastname" placeholder="Last Name" class="form-control input-sm">
+                </div>
+            </div>
             <div class="form-group mb-2">
                 <label for="content-title" class="label">Title</label>
                 <input type="text"
