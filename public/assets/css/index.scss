@@ -45,15 +45,11 @@ $default: #e2e2e2;
     width: 100%;
 }
 .opacity{
-    filter: opacity(.5);
-}
-.opacity-min{
-    filter:opacity(.7);
+    filter: opacity(.8);
 }
 .view{
     // width: 40%;
     margin: auto;
-    text-align: left;
 
     textarea{
         resize: vertical;

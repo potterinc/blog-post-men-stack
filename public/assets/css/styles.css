@@ -40,16 +40,11 @@
 }
 
 .opacity {
-  filter: opacity(0.5);
-}
-
-.opacity-min {
-  filter: opacity(0.7);
+  filter: opacity(0.8);
 }
 
 .view {
   margin: auto;
-  text-align: left;
 }
 .view textarea {
   resize: vertical;

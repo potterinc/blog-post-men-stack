@@ -29,11 +29,12 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="/" class="nav-link">Inspiring Quotes</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="quotes">Inspiring Quotes</a></li>
                         <li class="nav-item"><a href="#" class="nav-link new-article">New Article</a></li>
                         <li class="nav-item"><a href="#" class="nav-link" id="view-all">View All</a></li>
                         <li class="nav-item"><a href="#" class="nav-link" id="blog">Blog</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link btn btn-sm btn-outline-info text-primary" id="hire">Hire a Writer</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link btn btn-sm btn-outline-info text-primary"
+                                id="hire">Hire a Writer</a></li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -42,55 +43,14 @@
                 </div>
             </div>
         </nav>
-        <div class="text-center center" id="router-outlet">
-            <div style="margin:auto" class="py-2 px-5 bg-dark opacity container">
-                <div class="writer-content">
-                    <blockquote>
-                        <h2 class="text-info py-2 text-capitalize">“Good first impressions....are good for business.”
-                        </h2>
-                        <figcaption class="blockquote-footer text-white">CS</figcaption>
-                    </blockquote>
-                    <blockquote>
-                        <h2 class="text-info py-2 text-capitalize">“Give Words to your Thoughts.”</h2>
-                        <figcaption class="blockquote-footer text-white">Thoughtful Minds</figcaption>
-                    </blockquote>
-                    <blockquote>
-                        <h2 class="text-info py-2 text-capitalize">“Content, in writing, is supreme.”
-                        </h2>
-                        <figcaption class="blockquote-footer text-white">Ogwo David Emenike</figcaption>
-                    </blockquote>
-                    <blockquote>
-                        <h2 class="text-info py-2 text-capitalize">“Well written article as like as Wrist Watch of Dad, that's hookup you wear it again and again”
-                        </h2>
-                        <figcaption class="blockquote-footer text-white">Momenul Ahmad</figcaption>
-                    </blockquote>
-                    <blockquote>
-                        <h2 class="text-info py-2 text-capitalize">“Writing is a chain of thoughts that we put into words!”
-                        </h2>
-                        <figcaption class="blockquote-footer text-white">Textuar</figcaption>
-                    </blockquote>
-                    
-                </div>
-                <a href="#" class="btn btn-lg btn-primary mb-1 new-article">Get Started</a>
-            </div>
-        </div>
+        <div class="center" id="router-outlet"></div>
     </div>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/slick/slick.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
-        $('.writer-content').slick({
-            autoplay: true,
-            dots: true,
-            arrows: false,
-            fade: true,
-            cssEase: 'linear',
-            speed: 500,
-            // adaptiveHeight:true,
-            pauseOnFocus: true,
-            autoplaySpeed: 5000
-        })
+        $('#router-outlet').load('../components/quotes.html')
     </script>
 </body>
 
