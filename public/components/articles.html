@@ -13,28 +13,8 @@
                     <td><i class="fa fa-cog fa-spin"></i></td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td hidden="hidden">#</td>
-                    <td>James Camron</td>
-                    <td>Titanic - Lost In the Blues</td>
-                    <td title="View Content"><button class="btn btn-sm btn-outline-primary"><i
-                                class="fa fa-eye"></i></button></td>
-                </tr>
-                <tr>
-                    <td hidden="hidden">#</td>
-                    <td>J.K Rowling</td>
-                    <td>Harry Potter - Fantastic Beasts: Secrets of Dumbledor</td>
-                    <td title="View Content"><button class="btn btn-sm btn-outline-primary"><i
-                                class="fa fa-eye"></i></button></td>
-                </tr>
-                <tr>
-                    <td hidden="hidden">#</td>
-                    <td>Andrew Wommack</td>
-                    <td>You've Already Got! - Quit trying to get it</td>
-                    <td title="View Content"><button class="btn btn-sm btn-outline-primary"><i
-                                class="fa fa-eye"></i></button></td>
-                </tr>
+            <tbody id="authors">
+               <!-- Shall be rendered from server side with a view engine -->
             </tbody>
         </table>
     </div>
@@ -47,3 +27,6 @@
         </small>
     </div>
 </div>
+<script>
+    $('#authors').load('/api/writers');
+</script>
