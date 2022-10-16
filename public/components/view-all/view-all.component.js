@@ -1,1 +1,1 @@
-$('#authors').load('/api/writers');
+$('#authors').load('/api/articles');
