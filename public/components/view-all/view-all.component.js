@@ -1,0 +1,1 @@
+$('#authors').load('/api/writers');

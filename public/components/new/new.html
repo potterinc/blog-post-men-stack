@@ -29,30 +29,32 @@
             <div class="input-group mb-2">
                 <input 
                     type="text"
-                    id="tags"
+                    id="tag-name"
                     class="form-control input-sm" 
-                    placeholder="Recipient's username" 
+                    placeholder="Enter tag + Click 'Add'"
                     aria-describedby="button-addon2">
                 <button 
                     class="btn btn-info" 
                     type="button"
-                    id="tag">
-                    <i class="fa fa-plus-circle text-white"></i>
-                    Tag
+                    id="add-tag">
+                    <i class="fa fa-plus-circle text-white"></i> 
+                    Add
                 </button>
               </div>
-            <div class="form-group disabled mb-2" 
-                id="tag-badge">
-                <span class="badge rounded-pill text-bg-light">drama</span>
-                <span class="badge rounded-pill text-bg-danger">horror</span>
-                <span class="badge rounded-pill text-bg-warning">thriller</span>
+            <div class="form-group mb-2">
+                <div id="tag-list">
+
+                </div>
             </div>
-            <button 
+            <div class="form-group">
+                <button 
                 class="btn btn-sm mt-2 btn-outline-info" 
                 type="button"
                 id="publish">
                 Post Content
             </button>
+            </div>
+            
         </form>
     </div>
     <div 
@@ -65,3 +67,5 @@
         </small>
     </div>
 </div>
+
+<script src="components/new/new.component.js"></script>
