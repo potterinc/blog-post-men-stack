@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Articles = require('../model/articles')
+const db = require('../db/conn')
 
 router
 	.get('/', async (req, res) => {
