@@ -13,23 +13,12 @@ let i = color = 0;
 
 // Publish Article
 $('#publish').on('click', () => {
-    // ..code here
-    // let Articles = {
-    //     Author:{
-    //         firstName: $('#firstname').val(),
-    //         lastName: $('#lastname').val()
-    //     },
-    //     Publication:{
-    //         title: $('#title').val(),
-    //         story: $('#content').val(),
-    //         tags: tags
-    //     }
-    // }
-
+  
     $.ajax({
         url: '/api/articles',
         type: 'POST',
-        dataType: 'json',
+        dataType:'json',
+        contentType: 'application/json',
         data: {
             firstName: $('#firstname').val(),
             lastName: $('#lastname').val(),
@@ -38,12 +27,17 @@ $('#publish').on('click', () => {
             tags: tags
             },
         beforeSend: () => {
-            $('#publish').html('')
-                .append($('<span>').addClass('loader'))
+            $('#publish').html(null)
+                .append($('<span></span>')
+                    .addClass('loader'))
         },
         success: (res) => {
-            $('#publilsh').html('Post Content')
+            $('#publish').html('Post Content')
             console.log(res.message)
+        },
+        statusCode:{
+            404:(e)=> console.log(`Bad Request: ${e.message}`),
+            201:(res)=> console.log(`Success: ${res.message}`)
         }
     })
 })

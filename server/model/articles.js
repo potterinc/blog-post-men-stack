@@ -20,14 +20,11 @@ const ArticleSchema = new mongoose.Schema({
             required: true,
             type: String
         },
-        tags: [],
+        tags: [String],
         datePublished: {
             type: Date,
-            default: Date.now
-        },
-        currency: String,
-        inStock: Boolean,
-        price: { type: Number, required: false }
+            default: new Date().toDateString()
+        }
     }
 })
 

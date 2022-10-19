@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const Articles = require('../model/articles')
-const db = require('../db/conn')
-
 router
 	.get('/', async (req, res) => {
 		try {
@@ -15,29 +13,28 @@ router
 		catch (e) {
 			res.status(500).json({ msg: e.message })
 		}
-	})
-	.post('/', async (req, res) => {
-		const pub = new Articles({
-			Author: {
-				firstName: 'Andrew',
-				lastName: 'Wommack'
-			},
-			Publication: {
-				title: 'You\'ve Already Got It!',
-				story: 'Quite Trying to Get It',
-				tags: ['Religous','Christian', 'Motivational'],
-				price: 2000,
-				currency: 'EUR',
-				inStock:true
-			}
-		})
-		try {
-			const newPub = await pub.save(pub)
-			res.status(201).json({ msg: 'recorded' })
-		} catch (e) {
-			res.status(400).json({ msg: e.message })
+	});
+router.post('/', async (req, res) => {
+	const pub = new Articles({
+		Author: {
+			firstName: req.body.firstName,
+			lastName: req.body.lastName
+		},
+		Publication: {
+			title: req.body.title,
+			story: req.body.story,
+			tags: req.body.tags
 		}
 	})
+	try {
+		const newPub = await pub.save()
+		res.status(201).json({
+			message: "Added new Article",
+		})
+	} catch (e) {
+		res.status(400).json({ msg: e.message })
+	}
+})
 
 router
 	.route('/:id')
