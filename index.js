@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 // Set static folder
 app.use(express.static(`${__dirname}/public`));
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }));
 
 // Init MongoDB
 require('./server/db/conn')
