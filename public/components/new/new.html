@@ -8,10 +8,20 @@
             <div class="row g-3 mb-2">
                 <label for="author" class="label">Author</label>
                 <div class="col-md-6">
-                    <input type="text" id="firstname" placeholder="First Name" class="form-control input-sm">
+                    <input 
+                    type="text" 
+                    id="firstname" 
+                    placeholder="First Name"
+                    validArticle
+                    class="form-control input-sm">
                 </div>
                 <div class="col-md-6">
-                    <input type="text" id="lastname" placeholder="Last Name" class="form-control input-sm">
+                    <input 
+                        type="text" 
+                        id="lastname" 
+                        placeholder="Last Name"
+                        validArticle
+                        class="form-control input-sm">
                 </div>
             </div>
             <div class="form-group mb-2">
@@ -19,13 +29,16 @@
                 <input type="text"
                     placeholder="ex: Tales By Moonlight"
                     id="title"
+                    validArticle
                     class="form-control input-sm">
                 </div>
             <div class="form-group mb-2">
                 <label for="content" class="label">Description</label>
                 <textarea
+                    validArticle
                     placeholder="The words of a ready writer"
-                    class="form-control input-sm" id="content"></textarea>
+                    class="form-control input-sm" 
+                    id="content"></textarea>
             </div>
             <div class="input-group mb-2">
                 <input 
@@ -43,19 +56,15 @@
                 </button>
               </div>
             <div class="form-group mb-2">
-                <div id="tag-list">
-
-                </div>
+                <div id="tag-list"></div>
             </div>
-            <div class="form-group">
                 <button 
-                class="btn btn-sm mt-2 btn-outline-info" 
+                class="btn btn-sm mt-2 btn-outline-info col-md-2" 
                 type="button"
                 id="publish">
                 Post Content
             </button>
-            </div>
-            
+            <div id="notify"></div>
         </form>
     </div>
     <div 

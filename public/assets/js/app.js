@@ -17,13 +17,4 @@ $(() => {
         $('#router-outlet').load('../components/view-all/articles.html')
     })
 
-    // Go to Blog Page
-    $('#blog').on('click', () => {
-        $('#router-outlet').load('../new.html')
-    })
-    // Hire
-    $('#hire').on('click', () => {
-        $('#router-outlet').load('../new.html')
-    })
-
 })

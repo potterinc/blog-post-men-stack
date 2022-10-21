@@ -16,13 +16,13 @@ router
 	});
 router.post('/', async (req, res) => {
 	const pub = new Articles({
-		Author: {
+		Author:{
 			firstName: req.body.firstName,
-			lastName: req.body.lastName
+			lastName:req.body.lastName
 		},
-		Publication: {
+		Publication:{
 			title: req.body.title,
-			story: req.body.story,
+			story:req.body.story,
 			tags: req.body.tags
 		}
 	})
@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
 			message: "Added new Article",
 		})
 	} catch (e) {
-		res.status(400).json({ msg: e.message })
+		res.status(400).json({ message: e.message })
 	}
 })
 
