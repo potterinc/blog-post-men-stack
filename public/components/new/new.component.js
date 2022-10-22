@@ -16,7 +16,7 @@ let i = color = 0;
 
 // Publish Article
 $('#publish').on('click', () => {
-   
+
     if (validateInput('validArticle')) {
         $.ajax({
             url: 'api/articles',
@@ -30,22 +30,29 @@ $('#publish').on('click', () => {
                 tags: tags
             },
             beforeSend: () => {
-                $('#publish').html(null).append($('<span></span>').addClass('loader'))
+                $('#publish').html(null)
+                $('#publish span').addClass('loader')
             },
             success: (res) => {
                 $('#publish').html('Post Content')
             },
-            complete:(res)=>{
+            complete: (res) => {
                 $('#firstname').val(null)
                 $('#lastname').val(null)
                 $('#title').val(null)
                 $('#content').val(null)
                 $('#tag-list').html(null)
-                tags=[]
+                tags = []
             },
             statusCode: {
                 400: (e) => $('#notify').html(`Error: ${e.message}`).addClass('alert alert-danger'),
-                201: (res) => $('#notify').html(`Success: ${res.message}`).addClass('alert alert-success')
+                201: (res) => {
+                    $('#notify').html(`Success: ${res.message}`).addClass('alert alert-success')
+                    setTimeout(() => {
+                        $('#notify').fadeOut(1000).html(null)
+                            .removeClass('alert alert-success').show()
+                    }, 3000)
+                }
             }
         })
     }

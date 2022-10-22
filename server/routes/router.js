@@ -5,10 +5,17 @@ router
 	.get('/', async (req, res) => {
 		try {
 			const publishedArticles = await Articles.find()
-			res.render('articles.ejs', {
+				// .projection({
+				// 	_id:1,
+				// 	firstName:1,
+				// 	lastName:1,
+				// 	title: 1,
+				// 	story:1,
+				// 	datePublished:1
+				// })
+			res.status(200).render('articles.ejs', {
 				publications: publishedArticles
 			})
-			res.status(200)
 		}
 		catch (e) {
 			res.status(500).json({ msg: e.message })
