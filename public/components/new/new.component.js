@@ -30,8 +30,8 @@ $('#publish').on('click', () => {
                 tags: tags
             },
             beforeSend: () => {
-                $('#publish').html(null)
-                $('#publish span').addClass('loader')
+                $('#publish').append($('<span></span>').addClass('spinner-border-sm'))
+                
             },
             success: (res) => {
                 $('#publish').html('Post Content')

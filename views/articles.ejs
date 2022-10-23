@@ -1,11 +1,20 @@
-<% publications.forEach(function(article){ %>
+<% publications.forEach((article)=>{ %>
 <tr>
     <td><%= article.Author.firstName %> <%=article.Author.lastName %></td>
     <td><%= article.Publication.title %></td>
     <td><%= article.Publication.datePublished.toDateString()%></td>
     <td title="View Content">
-        <a href="/api/view/<%=article._id %>" class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i>
+        <a
+            class="btn btn-sm btn-outline-primary"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#viewOne"
+            action="/api/articles/view/<%=article._id %>"
+            id="view-one">
+            <i class="fa fa-eye"></i>
         </a>
+       
     </td>
 </tr>
+
 <% }); %>

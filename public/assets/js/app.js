@@ -16,5 +16,4 @@ $(() => {
     $('#view-all').on('click', () => {
         $('#router-outlet').load('../components/view-all/articles.html')
     })
-
 })
