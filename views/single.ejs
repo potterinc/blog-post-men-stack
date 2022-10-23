@@ -1,22 +1,26 @@
 <div class="card">
     <header class="card-header h4">
         <i class="fa fa-clock text-info"></i>
-        <!-- <%= article.Publication.title %> -->
+        <%= singleArticle.Publication.title %>
+        <figcaption class="blockquote-footer text-white">
+            <%= singleArticle.Author.firstName %>
+            <%= singleArticle.Author.lastName %>
+        </figcaption>
     </header>
     <div class="card-body mb-2">
-        <!-- <%= article.Publication.story %> -->
+        <%= singleArticle.Publication.story %>
             <hr />
             <div class="d-flex justify-content-between">
                 <div class="tags">
-                    <!-- <% article.Publication.tags.forEach((tag)=>{ %>
-                        <span class="badge rounded-pill primary text-white m-1">
+                    <% singleArticle.Publication.tags.forEach((tag)=>{ %>
+                        <span class="badge h6 rounded-pill text-bg-primary m-1">
                             <%= tag %>
                         </span>
-                        <% }); %> -->
+                    <% }) %>
                 </div>
                 <div class="actions">
-                    <a href="" class="btn btn-success btn-sm m-1"></a>
-                    <a href="" class="btn btn-danger btn-sm m-1"></a>
+                    <a href="" class="btn btn-success btn-sm m-1"><i class="fa fa-edit"></i></a>
+                    <a href="" class="btn btn-danger btn-sm m-1"><i class="fa fa-trash"></i></a>
                 </div>
             </div>
     </div>

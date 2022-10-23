@@ -1,20 +1,27 @@
 <% publications.forEach((article)=>{ %>
-<tr>
-    <td><%= article.Author.firstName %> <%=article.Author.lastName %></td>
-    <td><%= article.Publication.title %></td>
-    <td><%= article.Publication.datePublished.toDateString()%></td>
-    <td title="View Content">
-        <a
-            class="btn btn-sm btn-outline-primary"
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target="#viewOne"
-            action="/api/articles/view/<%=article._id %>"
-            id="view-one">
-            <i class="fa fa-eye"></i>
-        </a>
-       
-    </td>
-</tr>
+    <tr>
+        <td>
+            <%= article.Author.firstName %>
+                <%=article.Author.lastName %>
+        </td>
+        <td>
+            <%= article.Publication.title %>
+        </td>
+        <td>
+            <%= article.Publication.datePublished.toDateString()%>
+        </td>
+        <td title="View Content">
+            <a class="btn btn-sm btn-outline-primary" 
+                onclick='_view("/api/articles/view/<%=article._id %>")'>
+                <i class="fa fa-eye"></i>
+            </a>
 
-<% }); %>
+        </td>
+    </tr>
+
+    <% }); %>
+    <script>
+        function _view(id){
+            $('viewOne').load(id)
+        }
+    </script>

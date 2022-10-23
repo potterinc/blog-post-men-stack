@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+
 const Articles = require('../model/articles')
 router
 	.get('/', async (req, res) => {
@@ -40,10 +41,8 @@ router
 	.get(async (req, res) => {
 		// Get articles with id
 		try {
-			const singleArticle = await Articles.find({ _id: req.params.id })
-			res.status(200).render('single', {
-				single: singleArticle
-			})
+			const singleArticle = await Articles.findOne({_id: req.params.id })
+			res.render('single.ejs',{singleArticle})
 		} catch (e) {
 			res.status(500).json({message: e.message})
 		}
